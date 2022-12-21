@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System.ComponentModel.DataAnnotations.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Timis_Adina_Lab7.Models
         [MaxLength(250), Unique]
         public string Description { get; set; }
         public DateTime Date { get; set; }
+        [ForeignKey(typeof(Shop))]
+        public int ShopID { get; set; }
     }
 }
 
